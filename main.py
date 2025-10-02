@@ -20,7 +20,8 @@ from flask_cors import cross_origin
 
 from models import Pitch
 
-
+with app.app_context():
+    db.create_all()
 #create zone model
 zone_model = joblib.load(open('zone_model.pkl', 'rb'))
 #create pitch_type model
@@ -122,7 +123,5 @@ def delete_pitch(id):
 
 if __name__ == '__main__':
     #Create the database tables if they don't exist
-    with app.app_context():
-        db.create_all()
     #Run the Flask app
     app.run(debug = True)
