@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 CORS(app, origins=[
-    "https://frontend-baseball.onrender.com",  
+    "https://pitch-predictor.onrender.com",  
     "http://localhost:5173"
 ])
 #Database configuration
@@ -15,3 +15,4 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 db = SQLAlchemy(app)
+
